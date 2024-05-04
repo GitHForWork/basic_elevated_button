@@ -1,6 +1,7 @@
 library basic_elevated_button;
 
 import 'package:basic_elevated_button/helper/app_localize.dart';
+import 'package:basic_elevated_button/helper/button_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,18 +41,7 @@ class BasicElevatedButton extends StatelessWidget {
       ),
       width: width ?? MediaQuery.of(context).size.width ,
       height:height?? 40.h,
-      child: ElevatedButton(
-        onPressed: onTap,
-        style:
-        ElevatedButton.styleFrom(
-          backgroundColor: color!=null?color!:Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius!.r)),
-        ),
-        child:icons != null ? Icon(icons):
-        Text(AppLocalize.of(context)!.trans(buttonText!),
-            style: TextStyle(color: textColor ?? const Color(0xFF262439), fontSize:fontSize?? 20.sp, fontWeight: FontWeight.w500)),
-      ),
+      child: ElevatedHelper(onTap:onTap, buttonText:buttonText, color: color, icons: icons, fontSize: fontSize, radius: radius, textColor: textColor,),
     );
   }
 }

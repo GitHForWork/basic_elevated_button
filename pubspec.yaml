@@ -1,7 +1,7 @@
 name: basic_elevated_button
 description: A new Flutter package button.
 version: 0.0.1
-homepage:
+homepage: https://github.com/GitHForWork/basic_elevated_button.git
 
 environment:
   sdk: '>=2.19.3 <3.0.0'
